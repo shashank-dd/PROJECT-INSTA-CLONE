@@ -1,0 +1,113 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .ico{
+    
+    text-decoration: dashed;
+    background-color: beige;
+    font-weight: bold;
+    color: rgb(12, 4, 255);
+    font-family: "Mochiy Pop P One", sans-serif;
+    box-shadow: 5px 5px 30px 4px rgb(221, 3, 255);
+  }
+  
+  .fa-solid.fa-camera{
+    width: 50px;
+    text-align: center;
+    margin-top: 15px;
+  }
+  nav{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px black solid;
+  }
+  .papa{
+    width: 400px;
+    margin:  auto ;
+  }
+  .grandpa{
+    border: 1px black solid;
+  }
+  .card{
+    margin: 10px auto ;
+    width: 200px;
+    border: 1px black solid;
+    box-shadow: 8px 8px 8px black;
+    border-radius: 10px;
+  }
+  .card:hover{
+   transform: scale(1.01);
+  }
+  .hjk{
+    display: flex;
+    justify-content: space-between;
+  }
+  .ana{
+    margin: 0px;
+  }
+  .fa-regular{
+    margin-right: 3px;
+  }
+  img{
+    width: 100%;
+    height: 150px;
+  }
+  .gh{
+    margin-right: 5px;
+    font-size: 3rem;
+  }
+  .likecon{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  
+  }
+  #jh{
+  width: 50px;
+  }
+  #kh{
+    width: 100px;
+  }
+  .bn{
+    font-weight: bold;
+  }
+  .hb{
+    text-align: left;
+  }
