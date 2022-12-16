@@ -4,16 +4,14 @@ import "./postview.css"
 function Preview(){
   const[data,setdata]=useState([])
     
-    useEffect(async()=>{
-    const data=await fetch("https://instaclonfronten.onrender.com/post")
-    
-    const da=await data.json()
-    
-    // .then((res)=>res.json()).then((res)=>{
-    //   setdata(res.p)
-    //  })
+    useEffect(()=>{
+     fetch("http://localhost:8080/post").then((res)=>res.json()).then((res)=>{
 
-   console.log(da)
+
+  setdata(res.p)
+     })
+  //   const da=await data.json()
+  //  console.log(da)
  
      
     },[])
