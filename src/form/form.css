@@ -1,0 +1,23 @@
+form{
+    width: 500px;
+    height: 300px;
+    margin: 170px auto;
+    border: 2px rgb(67, 58, 58) solid;
+    background-color: rgb(55, 186, 186);
+    padding-top:80px ;
+    padding-left: 45px;
+    box-sizing: border-box;
+}
+.div{
+    width: 400px;
+   border: 1px green solid;
+}
+
+.s{
+    width: 400px;
+    height: 30px;
+    border: 1px green solid;
+}
+#i{
+    width: 80%;
+}
