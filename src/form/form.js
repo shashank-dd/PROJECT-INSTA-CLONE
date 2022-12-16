@@ -43,7 +43,7 @@ import "./form.css"
        console.log(formdata,9808080)
         try {
           console.log(1)
-          const res=await axios.post("http://localhost:8080/add/user",formdata)
+          const res=await axios.post("https://instaclonfronten.onrender.com/add/user",formdata)
            if(res.status==200){
             console.log("added",res.data)
            }
