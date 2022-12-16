@@ -22,7 +22,7 @@ const postschema = new mongooose.Schema({
 
 })
 
-const post = mongooose.model('uses', postschema);
+const post = mongooose.model('user', postschema);
 
 
 let arr=[
