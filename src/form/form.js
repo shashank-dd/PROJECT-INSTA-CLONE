@@ -21,7 +21,7 @@ import "./form.css"
           description:state.description
       }
 
- const   data=await  axios.post("http://localhost:8080/add/user", newPost, config)
+ const   data=await  axios.post("https://backebinta.onrender.com/add/user", newPost, config)
         console.log(data)
         
   }

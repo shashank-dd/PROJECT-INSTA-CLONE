@@ -5,7 +5,7 @@ function Preview(){
   const[data,setdata]=useState([])
     
     useEffect(()=>{
-     fetch("http://localhost:8080/post").then((res)=>res.json()).then((res)=>{
+     fetch("https://backebinta.onrender.com/post").then((res)=>res.json()).then((res)=>{
 
 
   setdata(res.p)
