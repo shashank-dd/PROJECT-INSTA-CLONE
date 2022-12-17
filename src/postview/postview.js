@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import "./postview.css"
 function Preview(){
   const[data,setdata]=useState([])
+  const[co,setco]=useState(1)
     
     useEffect(()=>{
-     fetch("https://backebinta.onrender.com/post").then((res)=>res.json()).then((res)=>{
+     fetch(" https://backebinta.onrender.com/post").then((res)=>res.json()).then((res)=>{
 
 
   setdata(res.p)
@@ -13,8 +14,18 @@ function Preview(){
   //   const da=await data.json()
   //  console.log(da)
  
-     
+ 
     },[])
+  //   function fop(d){
+  // //https://backebinta.onrender.com
+  //     fetch(`http://localhost:8080/delete/?auther=${d}`, {
+  //       method: 'DELETE',
+      
+  //       //if you do not want to send any addional data,  replace the complete JSON.stringify(YOUR_ADDITIONAL_DATA) with null
+  //     }).then((res)=>{res.json()}).then((res)=>{
+  //       console.log(res)
+  //     })
+  //   }
     
     return<>
 
@@ -25,7 +36,7 @@ function Preview(){
         </nav>
        <div className="grandpa">
        {data&& data.map((elem,index)=>{
-           return <section className="card" key={index}>
+           return <section className="card" key={index+elem}>
               <div className="hjk">
                 <span>
                  <p className="ana">{elem.auther}</p>  
@@ -44,6 +55,19 @@ function Preview(){
             
               <div>
                 <p className="bn">{elem.description}</p>
+              </div>
+              <div>
+                <button id="de"  onClick={()=>{
+                    fetch(`https://backebinta.onrender.com/delete/?_id=${elem._id}`, {
+                      method: 'DELETE',
+                   
+                    
+                      //if you do not want to send any addional data,  replace the complete JSON.stringify(YOUR_ADDITIONAL_DATA) with null
+                    }).then((res)=>{res.json()}).then((res)=>{
+                      console.log(res.k)
+                    })
+
+}}>delete</button>
               </div>
 
         </section>})}
