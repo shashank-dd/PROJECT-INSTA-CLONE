@@ -8,7 +8,7 @@ export  default   Screen=()=>{
    <img  className="sd" src={Src}/>
    <div className="jk">
    <h1 className="gh">Landing Page</h1>
-    <h1 id="yt">10x Team 04</h1>
+    <h1 id="yt">SHASHANK D D</h1>
    <div className="yg">
    <Link className="y" to="/postview"><button className="button"> Enter </button></Link>
       
