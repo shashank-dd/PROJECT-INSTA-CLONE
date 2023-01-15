@@ -1,9 +1,10 @@
 import React, {  useState } from "react";
-import {  Link } from "react-router-dom";
+import {  Link, useNavigate} from "react-router-dom";
 import axios from "axios";
 import "./form.css"
- function Form(){
 
+ function Form(){
+ 
    const [state,setstate]=useState({ image:"",auther:"",location:"",description:""})
   //  const[pic,setpic]=useState("")
    const config ={
@@ -11,7 +12,7 @@ import "./form.css"
       "content-type": "multipart/form-data"
     }
   }
-
+  const navigate=useNavigate()
   const handleClick=async()=>{
     
       const newPost={
@@ -21,8 +22,12 @@ import "./form.css"
           description:state.description
       }
 
- const   data=await  axios.post("https://backebinta.onrender.com/add/user", newPost, config)
-        console.log(data)
+ const   data=await  axios.post("https://instaclonfrontendk.onrender.com/add/user", newPost, config)
+        console.log(data.data.ms)
+        if(data.data.ms=="ok"){
+          console.log(1)
+          navigate("/postview")
+        }
         
   }
   // async   function fop(){
@@ -100,7 +105,7 @@ import "./form.css"
         
        
         
-    <Link to="/postview"> <button onClick={handleClick} type="submit" >POST </button></Link>
+     <button onClick={handleClick} type="submit" >POST </button>
   
   
     {/* <img  src={pic}>  </img> */}

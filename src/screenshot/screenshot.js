@@ -9,6 +9,7 @@ export  default   Screen=()=>{
    <div className="jk">
    <h1 className="gh">Landing Page</h1>
     <h1 id="yt">SHASHANK D D</h1>
+    <p style={{color:"red",fontSize:"25px"}}>sushmitha<br/>nisarga<br/>akshitha<br/>sinchana<br/>ramya</p>
    <div className="yg">
    <Link className="y" to="/postview"><button className="button"> Enter </button></Link>
       

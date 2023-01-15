@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./postview.css"
 function Preview(){
+  const navigate=useNavigate()
   const[data,setdata]=useState([])
   const[co,setco]=useState(1)
     
     useEffect(()=>{
-     fetch(" https://backebinta.onrender.com/post").then((res)=>res.json()).then((res)=>{
+     fetch("https://instaclonfrontendk.onrender.com/post").then((res)=>res.json()).then((res)=>{
 
 
   setdata(res.p)
@@ -15,7 +16,7 @@ function Preview(){
   //  console.log(da)
  
  
-    },[])
+    },[co])
   //   function fop(d){
   // //https://backebinta.onrender.com
   //     fetch(`http://localhost:8080/delete/?auther=${d}`, {
@@ -32,6 +33,9 @@ function Preview(){
     <div className="papa">
         <nav>
         <p className="ico">instaclone</p>
+        <Link to="/postview"><p onClick={()=>{
+          setco((p)=>p+1)
+        }}>Refresh</p> </Link>   
      <Link to="/form"><i className="fa-solid fa-camera"></i></Link>   
         </nav>
        <div className="grandpa">
@@ -57,15 +61,26 @@ function Preview(){
                 <p className="bn">{elem.description}</p>
               </div>
               <div>
-                <button id="de"  onClick={()=>{
-                    fetch(`https://backebinta.onrender.com/delete/?_id=${elem._id}`, {
+                <button id="de"  onClick={async()=>{
+               let d=   await  fetch(`http://localhost:8080/delete/?_id=${elem._id}`, {
                       method: 'DELETE',
                    
                     
                       //if you do not want to send any addional data,  replace the complete JSON.stringify(YOUR_ADDITIONAL_DATA) with null
-                    }).then((res)=>{res.json()}).then((res)=>{
-                      console.log(res.k)
                     })
+                 d= await d.json()  
+  console.log(d)
+  if(d.k=="deleted"){
+    console.log(99)
+    setco((p)=>p+1)
+  }
+
+                    // .then((res)=>{res.json()}).then((res)=>{
+                    //   console.log(res.k)
+                    //   if(res.k=="deleted"){
+                    //     navigate("/postview")
+                    //   }
+                    // })
 
 }}>delete</button>
               </div>
