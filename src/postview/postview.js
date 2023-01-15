@@ -7,7 +7,7 @@ function Preview(){
   const[co,setco]=useState(1)
     
     useEffect(()=>{
-     fetch("https://instaclonfrontendk.onrender.com/post").then((res)=>res.json()).then((res)=>{
+     fetch("https://backebinta.onrender.com/post").then((res)=>res.json()).then((res)=>{
 
 
   setdata(res.p)
@@ -62,7 +62,7 @@ function Preview(){
               </div>
               <div>
                 <button id="de"  onClick={async()=>{
-               let d=   await  fetch(`http://localhost:8080/delete/?_id=${elem._id}`, {
+               let d=   await  fetch(`https://backebinta.onrender.com/delete/?_id=${elem._id}`, {
                       method: 'DELETE',
                    
                     

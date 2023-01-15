@@ -22,7 +22,7 @@ import "./form.css"
           description:state.description
       }
 
- const   data=await  axios.post("https://instaclonfrontendk.onrender.com/add/user", newPost, config)
+ const   data=await  axios.post("https://backebinta.onrender.com/add/user", newPost, config)
         console.log(data.data.ms)
         if(data.data.ms=="ok"){
           console.log(1)
