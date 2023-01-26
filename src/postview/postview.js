@@ -7,6 +7,7 @@ function Preview(){
   const[co,setco]=useState(1)
     
     useEffect(()=>{
+      console.log("wait")
      fetch("https://backebinta.onrender.com/post").then((res)=>res.json()).then((res)=>{
 
 console.log(res.p)
