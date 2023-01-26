@@ -9,7 +9,7 @@ function Preview(){
     useEffect(()=>{
      fetch("https://backebinta.onrender.com/post").then((res)=>res.json()).then((res)=>{
 
-
+console.log(res.p)
   setdata(res.p)
      })
   //   const da=await data.json()
