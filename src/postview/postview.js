@@ -5,13 +5,18 @@ function Preview(){
   const navigate=useNavigate()
   const[data,setdata]=useState([])
   const[co,setco]=useState(1)
+  const[tog,settog]=useState(false)
     
     useEffect(()=>{
       console.log("wait")
-     fetch("https://backebinta.onrender.com/post").then((res)=>res.json()).then((res)=>{
+      settog((t)=>{ return !t})
+     fetch("http://localhost:8080/post").then((res)=>res.json()).then((res)=>{
 
 console.log(res.p)
+
   setdata(res.p)
+     }).finally(()=>{
+      settog((t)=>{ return !t})
      })
   //   const da=await data.json()
   //  console.log(da)
@@ -30,7 +35,7 @@ console.log(res.p)
   //   }
     
     return<>
-
+{tog?<div className="lds-hourglass"></div>:
     <div className="papa">
         <nav>
         <p className="ico">instaclone</p>
@@ -63,7 +68,7 @@ console.log(res.p)
               </div>
               <div>
                 <button id="de"  onClick={async()=>{
-               let d=   await  fetch(`https://backebinta.onrender.com/delete/?_id=${elem._id}`, {
+               let d=   await  fetch(`http://localhost:8080/delete/?_id=${elem._id}`, {
                       method: 'DELETE',
                    
                     
@@ -90,7 +95,7 @@ console.log(res.p)
        </div>
         
         
-    </div>
+    </div>}
     </>
 }
 export default Preview

@@ -6,6 +6,7 @@ import "./form.css"
  function Form(){
  
    const [state,setstate]=useState({ image:"",auther:"",location:"",description:""})
+   const[tog,settog]=useState(false)
   //  const[pic,setpic]=useState("")
    const config ={
     headers: {
@@ -15,21 +16,29 @@ import "./form.css"
   const navigate=useNavigate()
   const handleClick=async()=>{
     
-      const newPost={
-        image:state.image,
-        auther:state.auther,
-          location:state.location,
-          description:state.description
-      }
-
- const   data=await  axios.post("https://backebinta.onrender.com/add/user", newPost, config)
+ 
+  try {
+    const newPost={
+      image:state.image,
+      auther:state.auther,
+        location:state.location,
+        description:state.description
+    }
+    settog(true)
+    const   data=await  axios.post("http://localhost:8080/add/user", newPost, config)
         console.log(data.data.ms)
+        settog(true)
         if(data.data.ms=="ok"){
           console.log(1)
           navigate("/postview")
         }
         
+  
+  } catch (error) {
+    settog(true)
   }
+}
+ 
   // async   function fop(){
         //     const form = new FormData();
         // form.append("image",state.image);
@@ -98,14 +107,14 @@ import "./form.css"
 
     return<>
         
-        <div className="s"><input className="i" type="file" name="image" placeholder="No file choosen" onChange={(e)=>{ console.log(e.target.files)
+      {tog?<div class="lds-hourglass"></div>: <div><div className="s"><input className="i" type="file" name="image" placeholder="No file choosen" onChange={(e)=>{ console.log(e.target.files)
             setstate({...state,image:e.target.files[0]})}}/></div>
         <div className="s">   <input type="text" name="auther"  className="i" onChange={(e)=>{setstate({...state,auther:e.target.value})}} placeholder="Auther"></input> <input name="location" onChange={(e)=>{setstate({...state,location:e.target.value})}}type="text" className="nin" placeholder="Location"></input></div>
         <div className="s"><input name="decription" onChange={(e)=>{setstate({...state,description:e.target.value})}} type="text" id="i" placeholder="Description "></input></div>
         
        
         
-     <button onClick={handleClick} type="submit" >POST </button>
+     <button onClick={handleClick} type="submit" >POST </button></div> }
   
   
     {/* <img  src={pic}>  </img> */}
