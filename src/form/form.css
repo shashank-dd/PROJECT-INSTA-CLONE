@@ -21,5 +21,49 @@ form{
 #i{
     width: 80%;
 }
+.bn{
+    display: block;
+    width: 420px;
+    margin:50vh auto;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(45deg,rgb(154, 213, 124),white,rgb(126, 119, 56));
+}
 
+.lds-hourglas {
+    display: inline-block;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-hourglas:after {
+    content: " ";
+    position: absolute;
+    top: -47px;
+    left: -109px;
+    display: block;
+    border-radius: 50%;
+    width: 0px;
+    height: 0px;
+    margin: -38px;
+    box-sizing: border-box;
+    border: 141px solid #fff;
+    border-color: #fff transparent #ffffff34 transparent;
+    animation: lds-hourglas 1.2s infinite;
+  }
+  @keyframes lds-hourglas {
+    0% {
+      transform: rotate(0);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    50% {
+      transform: rotate(900deg);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    100% {
+      transform: rotate(1800deg);
+    }
+  }
   

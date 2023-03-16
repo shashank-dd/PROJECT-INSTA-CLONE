@@ -35,7 +35,7 @@ console.log(res.p)
   //   }
     
     return<>
-{tog?<div className="lds-hourglass"></div>:
+{tog?<div className="lds-hourglass"></div>:null}
     <div className="papa">
         <nav>
         <p className="ico">instaclone</p>
@@ -95,7 +95,7 @@ console.log(res.p)
        </div>
         
         
-    </div>}
+    </div>
     </>
 }
 export default Preview

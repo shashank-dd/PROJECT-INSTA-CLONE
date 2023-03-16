@@ -53,17 +53,17 @@ body{
   color: rgb(2, 46, 2);
   text-align: center;
 }
-.lds-hourglass {
-  display: flex;
- width: 100vw;
- height: 100vh;
-  justify-content: center;
-  align-items: center;
-background-color: aqua;
+/* .lds-hourglass {
+  position: relative;
+  top: 200px;
+  left: 200px;
+ 
+
   
 }
 .lds-hourglass:after {
   content: " ";
+  position: relative;
   display: block;
   border-radius: 50%;
   width: 261px;
@@ -71,7 +71,41 @@ background-color: aqua;
   margin: 51px;
   box-sizing: border-box;
   border: 141px solid #4e3cdbc8;
-  border-color: #ffffff transparent #fff transparent;
+  border-color: #da9090 transparent #484545 transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+} */
+.lds-hourglass {
+  display: inline-block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+}
+.lds-hourglass:after {
+  content: " ";
+  position: absolute;
+  top: 261px;
+  left: -109px;
+  display: block;
+  border-radius: 50%;
+  width: 0px;
+  height: 0px;
+  margin: -38px;
+  box-sizing: border-box;
+  border: 141px solid #fff;
+  border-color: #fff transparent hsla(0, 0%, 100%, 0.863) transparent;
   animation: lds-hourglass 1.2s infinite;
 }
 @keyframes lds-hourglass {
