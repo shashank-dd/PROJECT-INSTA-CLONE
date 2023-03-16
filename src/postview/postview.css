@@ -63,7 +63,8 @@
     margin:  auto ;
   }
   .grandpa{
-    border: 1px black solid;
+    
+    background: linear-gradient(45deg,rgb(154, 213, 124),white,rgb(126, 119, 56));
   }
   .card{
     margin: 10px auto ;
@@ -71,6 +72,7 @@
     border: 1px black solid;
     box-shadow: 8px 8px 8px black;
     border-radius: 10px;
+    background-color: azure;
   }
   .card:hover{
    transform: scale(1.01);
@@ -114,4 +116,8 @@
   #de{
     background-color: black;
     color: white;
+  }
+  #de:hover{
+    background-color: rgb(238, 41, 41);
+    color: rgb(33, 50, 174);
   }
