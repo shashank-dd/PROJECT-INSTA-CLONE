@@ -68,6 +68,7 @@ console.log(res.p)
               </div>
               <div>
                 <button id="de"  onClick={async()=>{
+                  settog((t)=>{ return !t})
                let d=   await  fetch(`https://instaclonfrontendk.onrender.com/post/delete/?_id=${elem._id}`, {
                       method: 'DELETE',
                    
@@ -75,6 +76,7 @@ console.log(res.p)
                       //if you do not want to send any addional data,  replace the complete JSON.stringify(YOUR_ADDITIONAL_DATA) with null
                     })
                  d= await d.json()  
+                 settog((t)=>{ return !t})
   console.log(d)
   if(d.k=="deleted"){
     console.log(99)
