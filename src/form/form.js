@@ -25,7 +25,7 @@ import "./form.css"
         description:state.description
     }
     settog((t)=>!t)
-    const   data=await  axios.post("http://localhost:8080/add/user", newPost, config)
+    const   data=await  axios.post("https://instaclonfrontendk.onrender.com/post/add/user", newPost, config)
         console.log(data.data.ms)
         settog(true)
         if(data.data.ms=="ok"){

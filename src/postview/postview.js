@@ -10,7 +10,7 @@ function Preview(){
     useEffect(()=>{
       console.log("wait")
       settog((t)=>{ return !t})
-     fetch("http://localhost:8080/post").then((res)=>res.json()).then((res)=>{
+     fetch("https://instaclonfrontendk.onrender.com/post/post").then((res)=>res.json()).then((res)=>{
 
 console.log(res.p)
 
@@ -68,7 +68,7 @@ console.log(res.p)
               </div>
               <div>
                 <button id="de"  onClick={async()=>{
-               let d=   await  fetch(`http://localhost:8080/delete/?_id=${elem._id}`, {
+               let d=   await  fetch(`https://instaclonfrontendk.onrender.com/post/delete/?_id=${elem._id}`, {
                       method: 'DELETE',
                    
                     
