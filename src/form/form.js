@@ -108,7 +108,7 @@ import "./form.css"
     return<>
         
       {tog?<div class="lds-hourglas"></div>:null}
-       <div className="bn"><div className="s"><input className="i" type="file" name="image" placeholder="No file choosen" onChange={(e)=>{ console.log(e.target.files)
+       <div className="bnn"><div className="s"><input className="i" type="file" name="image" placeholder="No file choosen" onChange={(e)=>{ console.log(e.target.files)
             setstate({...state,image:e.target.files[0]})}}/></div>
         <div className="s">   <input type="text" name="auther"  className="i" onChange={(e)=>{setstate({...state,auther:e.target.value})}} placeholder="Auther"></input> <input name="location" onChange={(e)=>{setstate({...state,location:e.target.value})}}type="text" className="nin" placeholder="Location"></input></div>
         <div className="s"><input name="decription" onChange={(e)=>{setstate({...state,description:e.target.value})}} type="text" id="i" placeholder="Description "></input></div>
